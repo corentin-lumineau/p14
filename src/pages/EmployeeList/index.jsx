@@ -1,5 +1,5 @@
 export default function EmployeeList() {
     return (
-        <div>coucou</div>
+        <div>Mon beau tableau</div>
     )
 }
