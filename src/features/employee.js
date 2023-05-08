@@ -1,29 +1,30 @@
 import { createSlice } from "@reduxjs/toolkit"
 
-export const createUser = (birthDate, startedDate, selectedDepartment, selectedState, e) => {
-    e.preventDefault();
-    debugger;
-}
 
 const initialState = {
     employees: [
-
+     
     ]
 }
 
-const { actions, reducer} = createSlice({
+const employeeSlice = createSlice({
     name: 'employee',
     initialState,
     reducers: {
         create: {
-            prepare: (data) => ({
-                payload: { data }
-            }),
+            prepare: (data) => (
+                {
+                    payload: data
+                }
+            ),
             reducer: (draft, action) => {
+                action.payload.selectedDepartment  = action.payload.selectedDepartment.label
+                action.payload.selectedState = action.payload.selectedState.label
                 draft.employees = [...draft.employees, action.payload]
             }
         }
     }
 })
 
-export default reducer;
+export const { create } = employeeSlice.actions;
+export default employeeSlice.reducer;
