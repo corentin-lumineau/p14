@@ -5,7 +5,6 @@ import { Table } from "cl-table-library"
 export default function EmployeeList() {
 
     const employeeList = useSelector(selectEmployeeList)
-    debugger;
   
     return (
         <Table data={employeeList} />
